@@ -1,6 +1,6 @@
 import { test, expect, chromium } from "@playwright/test";
 
-test.describe.parallel("suite", () => {
+test.describe.parallel("suite pack", () => {
   test("basic test", async ({ page }) => {
     await page.goto("https://playwright.dev/");
     const title = page.locator(".navbar__inner .navbar__title");
