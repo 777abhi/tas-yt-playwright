@@ -7,7 +7,7 @@
 - loop test with different parameters from the settings file 
 
 
-## TAS - download code from GitHub in your local machine
+## TAS - download code from GitHub in your local machine & push latest code to GitHub
 
 ```bash
 git clone https://github.com/777abhi/tas-yt-playwright.git
