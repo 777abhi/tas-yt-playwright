@@ -1,89 +1,79 @@
-## TAS - Load test data from a configuration file settings.json
+# Test Automation Series - Playwright
 
-- inspect the the file and see what can be extracted as a parameter 
-- create a json file at the root location 
-- refer the json file in the test script 
-- call the parameter from the json file 
-- loop test with different parameters from the settings file 
+This repository contains examples and experiments with [Playwright](https://playwright.dev/) for web automation testing. It serves as a learning sandbox for exploring Playwright features.
 
+## 📂 Current Coverage
 
-## TAS - download code from GitHub in your local machine & push latest code to GitHub
+The repository currently includes the following implementations in `test.spec.ts`:
 
-```bash
-git clone https://github.com/777abhi/tas-yt-playwright.git
-```
+*   **Basic Test Verification:**
+    *   Navigating to the Playwright homepage.
+    *   Verifying page title using assertions (`expect`).
+*   **Auto-generated Tests:**
+    *   Example of code generated via Playwright Codegen.
+    *   Demonstrates interaction with the page by clicking through navigation menus.
+*   **Parallel Execution:**
+    *   Using `test.describe.parallel` to group and run tests concurrently.
+*   **Custom Browser Launch:**
+    *   Launching Google Chrome from a specific system path (`executablePath`).
+    *   *Note: The current path is configured for macOS (`/Applications/Google Chrome.app/...`). This may need adjustment for Windows or Linux environments.*
 
+## 🚀 Possible Increments
 
-## TAS - push code to remote
- -  [YT Video](https://www.youtube.com/watch?v=QhhjjMs4LbY&list=PL18bn1hY6igVa_WBzDAOayYIu-tNazixG&index=7&ab_channel=AbhinavSharma)
-```
-github
-push code to remote
-publish changes
-```
+Future improvements and additions to this repository could include:
 
-## TAS - Create Git repo local
- -  [YT Video](https://www.youtube.com/watch?v=Uj3d6DgoDfc&list=PL18bn1hY6igVa_WBzDAOayYIu-tNazixG&index=6&ab_channel=AbhinavSharma)
-```
-git --version, git init
-git local
-gitk
-git-gui
-```
+*   **Data-Driven Testing:**
+    *   Extracting test data into external files (e.g., `settings.json`, CSV, or Excel).
+    *   Iterating over data sets to run the same test logic with different inputs.
+*   **Page Object Model (POM):**
+    *   Refactoring tests to use the Page Object Model design pattern.
+    *   Separating page structure/locators from test logic for better maintainability and reusability.
+*   **Configuration Management:**
+    *   Adding a `playwright.config.ts` file to manage global settings.
+    *   Configuring browser contexts, base URLs, timeouts, retries, and viewport sizes centrally.
+*   **Cross-Browser Testing:**
+    *   Configuring the test runner to execute tests on Firefox and WebKit (Safari) in addition to Chromium.
+*   **CI/CD Integration:**
+    *   Setting up workflows (e.g., GitHub Actions) to automatically run tests on code pushes or pull requests.
+*   **Visual Regression Testing:**
+    *   Implementing screenshot comparisons to detect unintended visual changes in the UI.
+*   **API Testing:**
+    *   Adding tests for backend API endpoints using Playwright's APIRequestContext.
 
-## TAS - Start Chrome browser from installed location
- -  [YT Video](https://www.youtube.com/watch?v=z07VyFbvnS4&list=PL18bn1hY6igVa_WBzDAOayYIu-tNazixG&index=5&ab_channel=AbhinavSharma)
-```
-npm test
-npx playwright test --headed
-test, expect from @playwright/test
-page
-test describe parallel
-```
+## 💡 Topics and Ideas for Exploration
 
+*   **Advanced Selectors:** Deep dive into CSS, XPath, and Playwright's unique layout selectors (e.g., `right-of`, `has-text`).
+*   **Authentication State:** Implementing `storageState` to save login cookies/tokens and reuse them across tests to bypass repetitive login screens.
+*   **Network Interception:** Mocking API responses or modifying network traffic to test edge cases and error handling.
+*   **Reporting:** Integrating with reporters like Allure, Monocart, or customizing the built-in HTML reporter.
+*   **Mobile Emulation:** Testing how the application behaves on mobile viewports and verifying responsive design.
+*   **Component Testing:** Exploring experimental component testing for React/Vue/Angular components.
 
-## TAS - Parallel test execution - Another way
- -  [YT Video](https://www.youtube.com/watch?v=qNywpF3YBkw&list=PL18bn1hY6igVa_WBzDAOayYIu-tNazixG&index=4&ab_channel=AbhinavSharma)
-```
-npm test
-npx playwright test --headed
-test, expect from @playwright/test
-page
-test describe parallel
-```
+## 🛠️ Setup and Usage
 
+1.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-## TAS - Auto Generate Code
- -  [YT Video](https://www.youtube.com/watch?v=UgZdJJ7tmyE&list=PL18bn1hY6igVa_WBzDAOayYIu-tNazixG&index=3&ab_channel=AbhinavSharma)
-```
-npm test
-npx playwright test --headed
-npx playwright codegen
-```
+2.  **Run tests:**
+    ```bash
+    npx playwright test
+    ```
 
+3.  **Run tests with headed browser:**
+    ```bash
+    npx playwright test --headed
+    ```
 
+## 📚 References & Resources
 
-## TAS - First Test
- -  [YT Video](https://www.youtube.com/watch?v=jUybteagtg4&list=PL18bn1hY6igVa_WBzDAOayYIu-tNazixG&index=3&ab_channel=AbhinavSharma)
+Original TAS (Test Automation Series) notes and video links:
 
-```
-npm install 
-npm test
-npx playwright test --headed
-test, expect from @playwright/test
-page
-```
-
-## Test Automation Series (TAS) - Introduction
- -  [Youtube (YT) Video ](https://www.youtube.com/watch?v=BcSO9cQC06c&list=PL18bn1hY6igVa_WBzDAOayYIu-tNazixG&ab_channel=AbhinavSharma)
-
-Test Automation using Playwright - a modern testing open-source tool  
-Quick to learn and easy to implement.
-
-This is the very first video that talks about the prerequisites prior to starting our journey with learning test automation of web browsers
-
-
-
-
-
-
+*   **Test Automation Series (TAS) - Introduction:** [YouTube Video](https://www.youtube.com/watch?v=BcSO9cQC06c&list=PL18bn1hY6igVa_WBzDAOayYIu-tNazixG&ab_channel=AbhinavSharma)
+*   **First Test:** [YouTube Video](https://www.youtube.com/watch?v=jUybteagtg4&list=PL18bn1hY6igVa_WBzDAOayYIu-tNazixG&index=3&ab_channel=AbhinavSharma)
+*   **Auto Generate Code:** [YouTube Video](https://www.youtube.com/watch?v=UgZdJJ7tmyE&list=PL18bn1hY6igVa_WBzDAOayYIu-tNazixG&index=3&ab_channel=AbhinavSharma)
+*   **Parallel test execution:** [YouTube Video](https://www.youtube.com/watch?v=qNywpF3YBkw&list=PL18bn1hY6igVa_WBzDAOayYIu-tNazixG&index=4&ab_channel=AbhinavSharma)
+*   **Start Chrome browser from installed location:** [YouTube Video](https://www.youtube.com/watch?v=z07VyFbvnS4&list=PL18bn1hY6igVa_WBzDAOayYIu-tNazixG&index=5&ab_channel=AbhinavSharma)
+*   **Create Git repo local:** [YouTube Video](https://www.youtube.com/watch?v=Uj3d6DgoDfc&list=PL18bn1hY6igVa_WBzDAOayYIu-tNazixG&index=6&ab_channel=AbhinavSharma)
+*   **Push code to remote:** [YouTube Video](https://www.youtube.com/watch?v=QhhjjMs4LbY&list=PL18bn1hY6igVa_WBzDAOayYIu-tNazixG&index=7&ab_channel=AbhinavSharma)
